@@ -8,6 +8,6 @@
     Title="PracticaWoW_MP">
 
     <ShellContent Title="WoW" ContentTemplate="{DataTemplate local:WowPage_MP}" Route="WowPage_MP"/>
-    <ShellContent Title="Personajes Guardados" ContentTemplate="{DataTemplate local:SavedCharacters_MP}" Route="SavedCharacters_MP"/>
+    <ShellContent Title="Personajes Guardados" ContentTemplate="{DataTemplate local:SavedCharacter_MP}" Route="SavedCharacter_MP"/>
 
 </Shell>

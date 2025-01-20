@@ -65,7 +65,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\SaveCharacter_MP.xaml">
+	  <MauiXaml Update="Views\SavedCharacter_MP.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\WowPage_MP.xaml">

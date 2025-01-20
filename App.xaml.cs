@@ -1,4 +1,6 @@
-﻿namespace PracticaWoW_MP
+﻿using PracticaWoW_MP.Services;
+
+namespace PracticaWoW_MP
 {
     public partial class App : Application
     {
@@ -8,5 +10,8 @@
 
             MainPage = new AppShell();
         }
+
+        public static DatabaseService_MP DataBaseService_MP { get; private set; }
+
     }
 }
