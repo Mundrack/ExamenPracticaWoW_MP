@@ -20,7 +20,6 @@ namespace PracticaWoW_MP.Views
             {
                 try
                 {
-                    // Guarda el personaje en la base de datos
                     await App.DataBaseService_MP?.SaveCharacter(character);
                     await DisplayAlert("Éxito", "Personaje guardado correctamente", "OK");
                 }

@@ -1,17 +1,14 @@
-﻿using PracticaWoW_MP.Services;
+﻿using Microsoft.Maui.Controls;
 
-namespace PracticaWoW_MP
+namespace PracticaWoW_MP;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
-
-            MainPage = new AppShell();
-        }
-
-        public static DatabaseService_MP DataBaseService_MP { get; private set; }
-
+        InitializeComponent();
+        MainPage = new AppShell();
     }
+
+    public static Task DataBaseService_MP { get; internal set; }
 }

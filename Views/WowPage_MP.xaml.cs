@@ -1,7 +1,6 @@
-using PracticaWoW_MP.Models;
+using System;
 using PracticaWoW_MP.ViewModels;
 using Microsoft.Maui.Controls;
-using System;
 
 namespace PracticaWoW_MP.Views
 {
@@ -23,7 +22,7 @@ namespace PracticaWoW_MP.Views
 
             if (string.IsNullOrEmpty(realm) || string.IsNullOrEmpty(name))
             {
-                await DisplayAlert("Advertencia", "Por favor, ingresa un reino y un nombre de personaje", "OK");
+                await DisplayAlert("Advertencia", "Por favor, ingresa un reino y un personaje.", "OK");
                 return;
             }
 

@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:PracticaWoW_MP.Views"
+             xmlns:vm="clr-namespace:PracticaWoW_MP.ViewModels"
              x:Class="PracticaWoW_MP.Views.WowPage_MP">
+    <ContentPage.BindingContext>
+        <vm:WowViewModel_MP />
+    </ContentPage.BindingContext>
 
     <StackLayout Padding="20">
-        <Entry x:Name="RealmEntry" Placeholder="Ingrese el reino" />
-        <Entry x:Name="NameEntry" Placeholder="Ingrese el nombre del personaje" />
-        <Button Text="Buscar" Clicked="OnSearchClicked" />
+        <Label Text="Consulta de Personaje WoW" FontSize="24" HorizontalOptions="Center"/>
 
-        <ListView x:Name="CharacterListView" ItemsSource="{Binding Characters}" SelectionMode="Single">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding CharacterClass.Name}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Entry x:Name="RealmEntry" Placeholder="Ingrese el reino"/>
+        <Entry x:Name="NameEntry" Placeholder="Ingrese el nombre del personaje"/>
+
+        <Button Text="Buscar" Clicked="OnSearchClicked"/>
+
+        <Label Text="Nombre:"/>
+        <Label Text="{Binding Character.Name}" FontSize="18"/>
+        <Label Text="Nivel:"/>
+        <Label Text="{Binding Character.Level}" FontSize="18"/>
+        <Label Text="Raza:"/>
+        <Label Text="{Binding Character.Race}" FontSize="18"/>
+        <Label Text="Clase:"/>
+        <Label Text="{Binding Character.CharacterClass}" FontSize="18"/>
     </StackLayout>
 </ContentPage>

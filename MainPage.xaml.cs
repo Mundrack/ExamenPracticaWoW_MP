@@ -1,25 +1,21 @@
-﻿namespace PracticaWoW_MP
+﻿using Microsoft.Maui.Controls;
+
+namespace PracticaWoW_MP.Views;
+
+public partial class MainPage_MP : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage_MP()
     {
-        int count = 0;
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        InitializeComponent();
     }
 
+    private async void GoToWoWPage(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(WowPage_MP));
+    }
+
+    private async void GoToSavedCharacters(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(SavedCharacter_MP));
+    }
 }

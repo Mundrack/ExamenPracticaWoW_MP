@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="PracticaWoW_MP.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:PracticaWoW_MP.Views"
-    Shell.FlyoutBehavior="Disabled"
-    Title="PracticaWoW_MP">
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:PracticaWoW_MP.Views"
+       x:Class="PracticaWoW_MP.AppShell">
 
-    <ShellContent Title="WoW" ContentTemplate="{DataTemplate local:WowPage_MP}" Route="WowPage_MP"/>
-    <ShellContent Title="Personajes Guardados" ContentTemplate="{DataTemplate local:SavedCharacter_MP}" Route="SavedCharacter_MP"/>
+    <FlyoutItem Title="Inicio">
+        <ShellContent Title="Home" ContentTemplate="{DataTemplate local:MainPage_MP}" Route="MainPage_MP"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Buscar Personaje">
+        <ShellContent Title="WoW" ContentTemplate="{DataTemplate local:WowPage_MP}" Route="WowPage_MP"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Personajes Guardados">
+        <ShellContent Title="Guardados" ContentTemplate="{DataTemplate local:SavedCharacter_MP}" Route="SavedCharacter_MP"/>
+    </FlyoutItem>
 
 </Shell>
