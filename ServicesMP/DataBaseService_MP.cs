@@ -1,31 +1,28 @@
-﻿using System;
+﻿using SQLite;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
-using SQLite;
 using PracticaWoW_MP.Models;
 
-namespace PracticaWoW_MP.Services
+namespace PracticaWoW_MP.ServicesMP
 {
-    public class DatabaseService_MP
+    public class DataBaseService_MP
     {
         private readonly SQLiteAsyncConnection _database;
 
-        public DatabaseService_MP()
+        public DataBaseService_MP(string dbPath)
         {
-            var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "wow_characters.db3");
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Character_MP>().Wait();
         }
 
-        public Task<int> SaveCharacter(Character_MP character)
-        {
-            return _database.InsertAsync(character);
-        }
-
-        public Task<List<Character_MP>> GetSavedCharacters()
+        public Task<List<Character_MP>> GetCharactersAsync()
         {
             return _database.Table<Character_MP>().ToListAsync();
+        }
+
+        public Task<int> SaveCharacterAsync(Character_MP character)
+        {
+            return _database.InsertAsync(character);
         }
     }
 }
